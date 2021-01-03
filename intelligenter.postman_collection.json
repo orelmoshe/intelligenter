@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "97e04c69-e5db-4e82-aeac-c353a297a46a",
+		"name": "intelligenter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/getResultsByDomain",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/getResultsByDomain?domain=google.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getResultsByDomain"
+					],
+					"query": [
+						{
+							"key": "domain",
+							"value": "google.com"
+						}
+					]
+				},
+				"description": "http://localhost:3000/getResultsByDomain?domain=google.com"
+			},
+			"response": []
+		},
+		{
+			"name": "/scanDomain",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"domain\": \"cyberbit.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/scanDomain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"scanDomain"
+					]
+				},
+				"description": "http://localhost:3000/scanDomain\r\nbody:{\r\n    \"domain\":\"cyberbit.com\"\r\n}"
+			},
+			"response": []
+		}
+	]
+}
