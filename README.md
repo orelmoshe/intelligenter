@@ -61,8 +61,11 @@ response: { domain: google.com, status: ”onAnalysis” }
 # create a local .env file with the following keys:
 
 API_KEY_VIRTUS_TOTAL = { YOUR_VT_KEY }
+
 API_KEY_WHOIS = { YOUR_WI_KEY }
+
 GOOGLE_APPLICATION_CREDENTIALS = { /path/to/the/credentials }
+
 DATA_BASE = { YOUR_PATH_DB_CONNECTION }
 
 ---
