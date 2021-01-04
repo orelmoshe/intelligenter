@@ -1,6 +1,6 @@
 # Intelligenter
 
-Technologies: Node.js/Typescript
+Technologies: Node.js/Typescript & MongoDB
 
 my node version: 14.13.1
 
