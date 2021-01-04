@@ -70,6 +70,12 @@ DATA_BASE = { YOUR_PATH_DB_CONNECTION }
 
 ---
 
+# add a local credentials json file from GCP
+
+ https://cloud.google.com/docs/authentication/production.
+
+---
+
 # Run:
 
 1. npm install pm2@latest -g.
