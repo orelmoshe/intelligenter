@@ -9,7 +9,7 @@
 		"kill:allProcess": "pm2 kill",
 		"build": "rimraf ./dist && tsc",
 		"info": "pm2 logs",
-		"test": "mocha -r ts-node/register ./src/tests/**/*.test.ts"
+		"test": "mocha -r ts-node/register --timeout 10000 ./src/tests/**/*.test.ts"
 	},
 	"author": "Orel Moshe",
 	"license": "ISC",
