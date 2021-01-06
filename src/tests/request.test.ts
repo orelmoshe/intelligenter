@@ -26,6 +26,14 @@ describe('Domains', () => {
 			);
 		});
 	});
+	afterEach((done) => {
+		Domain.remove({}, (err) => {
+			AuditLog.remove({}, (err) => {
+				done();
+			});
+		});
+	});
+
 	/*
 	 * Test the /GET route
 	 */
@@ -35,6 +43,7 @@ describe('Domains', () => {
 				.request(server)
 				.get('/getResultsByDomain?domain=google.com')
 				.end((err, res) => {
+					if (err) done(err);
 					res.should.have.status(200);
 					res.body.should.be.eql('OnAnalysis');
 					done();
@@ -46,6 +55,7 @@ describe('Domains', () => {
 			.request(server)
 			.get('/getResultsByDomain?domain=google')
 			.end((err, res) => {
+				if (err) done(err);
 				res.should.have.status(500);
 				res.body.should.be.eql('Failed while trying to get stored data on a domain, Error:"Domain not valid"');
 				done();
@@ -64,6 +74,7 @@ describe('Domains', () => {
 				.post('/scanDomain')
 				.send(domain)
 				.end((err, res) => {
+					if (err) done(err);
 					res.should.have.status(200);
 					done();
 				});
@@ -77,6 +88,7 @@ describe('Domains', () => {
 				.post('/scanDomain')
 				.send(domain)
 				.end((err, res) => {
+					if (err) done(err);
 					res.should.have.status(500);
 					done();
 				});
