@@ -58,7 +58,6 @@ class DBService {
 			});
 
 			const option = { session };
-			// i need check why save({session}) not working
 			await domainObj.save();
 			await session.commitTransaction();
 			session.endSession();
@@ -111,8 +110,7 @@ class DBService {
 		await session.startTransaction();
 		try {
 			console.log(`Trying to update domain object, ${domain}, query: ${JSON.stringify(query)}`);
-			// i need check why add session to options object not working
-			const newData = await Domain.findOneAndUpdate({ domain }, query, { upsert: true, new: true, setDefaultsOnInsert: true });
+			const newData = await Domain.findOneAndUpdate({ domain }, query, { upsert: true, new: true, setDefaultsOnInsert: true, ...session });
 			if (!newData) {
 				console.log(`The update ${domain} domain failed`);
 				return null;
@@ -140,7 +138,6 @@ class DBService {
 				response,
 			});
 			const option = { session };
-			// i need check why save({session}) not working
 			await auditLog.save();
 			await session.commitTransaction();
 			session.endSession();
